@@ -3,15 +3,15 @@ import { Card, Col, Row, Button, Text } from "@nextui-org/react";
 export const NFTCard = () => {
   return (
     <>
-      <Card css={{ w: "100%", h: "400px" }}>
+      <Card css={{ w: "100%" }}>
         <Card.Header css={{ position: "absolute", zIndex: 1, top: 5 }}>
         </Card.Header>
         <Card.Body css={{ p: 0 }}>
           <Card.Image
-            src="./NFTs/superman.png"
-            width="100%"
-            height="100%"
-            objectFit="cover"
+            src="./NFTs/member.png"
+            width="100"
+            height="100"
+            objectFit="contain"
             alt="Card example background"
           />
         </Card.Body>
@@ -28,12 +28,12 @@ export const NFTCard = () => {
           <Row>
             <Col>
               <Text color="#000" size={12}>
-                Congrats! You are eligible.
+                Get Your Badge For 10 MATIC
               </Text>
             </Col>
             <Col>
               <Row justify="flex-end">
-                <Button auto color="success">
+                <Button auto color={"primary"}>
                   <Text
                     css={{ color: "inherit" }}
                     size={12}

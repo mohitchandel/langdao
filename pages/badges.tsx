@@ -14,8 +14,8 @@ const Badges: NextPage = () => {
       </Head>
 
       <main>
+        <NavBar active="badges" />
         <Container>
-          <NavBar active="badges" />
           <Row justify="center" align="center">
             <Text
               h3
@@ -25,13 +25,13 @@ const Badges: NextPage = () => {
               }}
               weight="bold"
             >
-              Mint Super Man Badge
+              Be The Community member
             </Text>
           </Row>
           <Row justify="center" align="center">
-            <Col span={9}>
+            <Col span={10}>
               <Grid.Container gap={2} justify="center">
-                <Grid md={4} lg={4} xs={12}>
+                <Grid md={5} lg={5} xs={12}>
                   <NFTCard />
                 </Grid>
               </Grid.Container>
@@ -50,7 +50,7 @@ const Badges: NextPage = () => {
             </Text>
           </Row>
           <Row justify="center" align="center">
-            <Col span={8}>
+            <Col span={12}>
               <Grid.Container gap={2} justify="center">
                 <Grid md={4} lg={4} xs={12}>
                   <NFTCard />

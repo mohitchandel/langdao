@@ -7,11 +7,12 @@ import {
   Spacer,
   Button,
   Pagination,
+  Checkbox
 } from "@nextui-org/react";
 
 export const DaoList = () => {
   const [checked, setChecked] = useState<string>("");
-  const [currentPage, setCurrentPage] = useState<number>(1);
+  const [currentLang, setCurrentLang] = useState<string>('all');
   const [totalPages, setTotalPages] = useState<number>(0);
   const [data, setData] = useState<Array<number>>([]);
 
@@ -30,12 +31,28 @@ export const DaoList = () => {
 
   return (
     <>
-      <Grid.Container gap={2}>
-        <Grid>
+      <Grid.Container gap={2} justify="center">
+        <Grid md={12} justify={"center"}>
+          <Button.Group color="error">
+            <Button onPress={() => setCurrentLang("all")}>All</Button>
+            <Button onPress={() => setCurrentLang("solidity")}>Solidity</Button>
+            <Button onPress={() => setCurrentLang("go")}>Go</Button>
+            <Button onPress={() => setCurrentLang("rust")}>Rust</Button>
+          </Button.Group>
+        </Grid>
+        <Grid md={12} justify={"center"}>
+          <Checkbox defaultSelected={false}>Show Completed</Checkbox>
+        </Grid>
+        <Grid md={12} justify={"center"}>
           <Collapse.Group splitted>
             {data.map((item, i) => {
               return (
-                <Collapse key={i} bordered title={`${item}`}>
+                <Collapse
+                  key={i}
+                  bordered
+                  title={`${item}`}
+                  subtitle={"Solidity"}
+                >
                   <Text>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                     do eiusmod tempor incididunt ut labore et dolore magna
@@ -43,6 +60,7 @@ export const DaoList = () => {
                     ullamco laboris nisi ut aliquip ex ea commodo consequat.
                   </Text>
                   <Radio.Group
+                    css={{ ml: "10px" }}
                     label="Options"
                     onChange={setChecked}
                     defaultValue="agree"

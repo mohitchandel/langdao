@@ -5,7 +5,7 @@ import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
 import "@openzeppelin/contracts/utils/Counters.sol";
 
-contract Badge is ERC721, ERC721URIStorage {
+contract MemberBadge is ERC721, ERC721URIStorage {
     using Counters for Counters.Counter;
 
     Counters.Counter private _tokenIdCounter;
@@ -15,7 +15,7 @@ contract Badge is ERC721, ERC721URIStorage {
 
     address payable private admin;
 
-    constructor() ERC721("TalentBadge", "TLB") {
+    constructor() ERC721("MemberBadge", "TLB") {
         admin = payable(msg.sender);
     }
 

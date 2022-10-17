@@ -15,15 +15,15 @@ const Home: NextPage = () => {
       </Head>
 
       <main>
+        <NavBar active="home" />
         <Container>
-          <NavBar active="home" />
           <Row>
             <Grid.Container gap={2} justify="center">
               <Grid md={6} lg={6} xs={12}>
-                <DaoList/>
+                <DaoList />
               </Grid>
               <Grid md={6} lg={6} xs={12}>
-                <DaoForm/>
+                <DaoForm />
               </Grid>
             </Grid.Container>
           </Row>

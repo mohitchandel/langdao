@@ -12,15 +12,13 @@ contract Controller {
         executor = _executor;
     }
 
-    function isExcutable() public pure returns (bool) {
-        return true;
+    function canPropose(address _proposer) public view returns (bool) {
+        if (badge.balanceOf(_proposer) > 0) return true;
+        else return false;
     }
 
-    function canPropose() public pure returns (bool) {
-        return true;
-    }
-
-    function canVote() public pure returns (bool) {
-        return true;
+    function canVote(address _voter) public view returns (bool) {
+        if (badge.balanceOf(_voter) > 0) return true;
+        else return false;
     }
 }
